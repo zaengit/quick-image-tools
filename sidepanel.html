@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Quick Image Tools</title>
+
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+	<div class="app-container">
+		<div class="main-content">
+			<div id="canvasWrap">
+				<canvas id="canvas"></canvas>
+				<div id="cropOverlay" class="hidden"></div>
+			</div>
+			<div 
+				id="info" 
+				class="info mt-3">
+			</div>
+		</div>
+		
+		<div class="sidepanel">
+			<div class="p-5">
+				<div class="tab-buttons">
+					<button 
+						id="cropTabBtn" 
+						class="tab-button active">
+						Crop
+					</button>
+					<button 
+						id="resizeTabBtn" 
+						class="tab-button">
+						Resize
+					</button>
+				</div>
+
+				<div id="cropTabContent">
+					<div>
+						<h2>Crop Image</h2>
+						<div class="form-group">
+							<div>
+								<label>Width(px)</label> 
+								<input 
+									id="cropW" 
+									type="number" 
+									min="1" />
+							</div>
+							<div>
+								<label>Height(px)</label> 
+								<input 
+									id="cropH" 
+									type="number" 
+									min="1" />
+							</div>
+						</div>
+						<div class="mt-3">
+							<label 
+								class="flex items-center gap-2 m-0">
+								<input 
+									type="checkbox" 
+									id="showGuides" 
+								checked /> 
+								Show guides
+							</label>
+						</div>
+					</div>
+					<div class="button-group">
+						<button 
+							id="toggleCropBtn" 
+							class="btn-secondary">
+							Start Crop
+						</button>
+						<button 
+							id="applyCropBtn" 
+							disabled 
+							class="btn-primary">
+							Apply Crop
+						</button>
+					</div>
+				</div>
+
+				<div 
+					id="resizeTabContent" 
+					class="hidden">
+					<div>
+						<h2>Resize Image</h2>
+						<div class="form-group">
+							<div>
+								<label>Width(px)</label> 
+								<input 
+									id="resizeW" 
+									type="number" 
+									min="1" />
+							</div>	
+							<div>
+								<label>Height(px)</label>
+								<input 
+									id="resizeH" 
+									type="number" 
+									min="1" />
+							</div>
+						</div>
+						<div class="mt-3">
+							<label 
+								class="flex items-center gap-2 m-0">
+								<input 
+									type="checkbox" 
+									id="keepAspect" 
+									checked />
+								Keep aspect ratio
+							</label>
+						</div>
+						<div class="button-group">
+							<button 
+								id="applyResizeBtn" 
+								class="btn-primary">
+								Apply Resize
+							</button>
+						</div>
+					</div>
+				</div>
+				
+				<div class="mt-4">
+					<h2>Download Image</h2>
+					<div class="mb-4">
+						<label>Format</label>
+						<select id="formatSelect" class="w-full">
+							<option value="image/jpeg">JPEG</option>
+							<option value="image/png">PNG</option>
+							<option value="image/webp">WebP</option>
+						</select>
+					</div>
+					<div>
+						<label>Quality</label>
+						<div class="slider-container">
+							<input 
+								type="range" 
+								id="qualityRange" 
+								min="0.1" 
+								max="1.0" 
+								step="0.01" 
+								value="0.9" 
+								class="w-full" />
+							<span 
+								id="qualityVal" 
+								class="slider-value">
+								90%
+							</span>
+						</div>
+					</div>
+					<div class="button-group">
+						<button 
+							id="resetBtn" 
+							class="btn-secondary">
+							Reset
+						</button>
+						<button 
+							id="downloadBtn" 
+							class="btn-primary">
+							Download
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="module" src="sidepanel.js"></script>
+</body>
+</html>

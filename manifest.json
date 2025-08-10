@@ -1,0 +1,21 @@
+{
+	"manifest_version": 3,
+	"name": "Quick Image Tools",
+	"version": "1.0",
+	"description": "Edit images instantly, right from your browser.",
+	"permissions": [
+		"sidePanel"
+	],
+	"action": {
+		"default_title": "Quick Image Tools"
+	},
+	"background": {
+		"service_worker": "service-worker.js"
+	},
+	"side_panel": {
+		"default_path": "sidepanel.html"
+	},
+	"icons": {
+		"128": "icon.png"
+	}
+}
